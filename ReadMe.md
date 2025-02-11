@@ -12,7 +12,9 @@ TBD
 
 ## Getting Started
 
-[Jupyter readme](jupyterNotebooks/ReadMe.md)
+- [Jupyter readme](jupyterNotebooks/ReadMe.md)
+- for .Net Try (dotnet try tool) - [repo](https://github.com/dotnet/try) and  [troubleshooting](https://stackoverflow.com/questions/77790887/dotnet-try-wants-to-access-key-tmp-in-your-keychain-should-i-give-it-acces)
+
 
 ## Sources
 
