@@ -1,0 +1,61 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!csharp
+
+Console.WriteLine("Hello, World!");
+
+#!csharp
+
+using Microsoft.DotNet.Interactive;
+
+var inputName = await Kernel.GetPasswordAsync("Pick a container registry.");
+
+#!csharp
+
+inputName.Display();
+
+#!csharp
+
+var registryName= inputName.GetClearTextPassword();
+
+#!pwsh
+
+Write-Host "Hello from powerShell"
+
+#!pwsh
+
+az login > $null 2>&1
+
+#!pwsh
+
+#!set --name registryName --value @csharp:registryName
+az acr repository show-tags --name $registryName --repository pdf-tika --output table
+
+#!markdown
+
+# Additional info
+
+#!markdown
+
+## More use cases
+- devOps
+
+#!markdown
+
+## Improved Caveats
+- PRs are good
+- Intelisense is good
+- Set up is faster
+
+## Still Caveats
+- Debugging is still not here.
+
+#!markdown
+
+## Dotnet repl 
+* C# Interactive
+* C# Immediate Window
+* CSI.exe
+* CSharpRepl

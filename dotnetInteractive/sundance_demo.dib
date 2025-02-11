@@ -1,0 +1,38 @@
+#!meta
+
+{"kernelInfo":{"defaultKernelName":"csharp","items":[{"aliases":[],"languageName":"csharp","name":"csharp"}]}}
+
+#!csharp
+
+#r "nuget:SandDance.InteractiveExtension,*-*"
+#r "nuget:DataView.InteractiveExtension,*-*"
+#r "nuget:Microsoft.ML.DataView"
+#r "nuget: Microsoft.Data.Analysis"
+
+#!csharp
+
+using System.IO;
+using System.Net.Http;
+
+var contents = await new HttpClient()
+.GetStringAsync("https://raw.githubusercontent.com/ageron/handson-ml2/master/datasets/housing/housing.csv");
+
+#!csharp
+
+using Microsoft.Data.Analysis;
+using Microsoft.ML;
+using System.Collections.Generic;
+
+var housingData = DataFrame.LoadCsvFromString(contents);
+
+#!csharp
+
+Console.WriteLine(housingData);
+
+#!csharp
+
+housingData.Display()
+
+#!csharp
+
+housingData.ToTabularDataResource().ExploreWithSandDance().Display();
